@@ -15,7 +15,6 @@ function palabraAlAzar() {
   return PALABRAS[Math.floor(Math.random() * PALABRAS.length)]
 }
 
-// Crea un tablero vacío: 6 filas de 5 letras en blanco
 function tableroVacio() {
   const tablero = []
   for (let f = 0; f < FILAS; f++) {
@@ -24,7 +23,6 @@ function tableroVacio() {
   return tablero
 }
 
-// Decide el color de una letra ya comprobada
 function estadoDe(letra, columna, solucion) {
   if (solucion[columna] === letra) return 'correcta'
   if (solucion.includes(letra)) return 'presente'
@@ -36,13 +34,11 @@ function App() {
   const [filaActual, setFilaActual] = useState(0)
   const [solucion, setSolucion] = useState(palabraAlAzar())
 
-  // El último intento comprobado, como texto: 'PERRO'
   const ultimo = filaActual > 0 ? intentos[filaActual - 1].join('') : ''
   const ganada = ultimo === solucion
   const terminada = ganada || filaActual === FILAS
 
   useEffect(() => {
-    // Lleva el cursor a la primera casilla en la que se puede escribir
     document.querySelector('.casilla:enabled')?.focus()
   }, [filaActual])
 
@@ -54,23 +50,18 @@ function App() {
 
   function cambiarLetra(f, c, evento) {
     const letra = evento.target.value.toUpperCase()
-    // Solo aceptamos una letra, o nada si se ha borrado
     if (!/^[A-ZÑ]?$/.test(letra)) return
 
-    // Copiamos el tablero, cambiamos la copia y la guardamos
 const copia = intentos.map((fila) => [...fila])
     copia[f][c] = letra
     setIntentos(copia)
 
-    // Después de escribir una letra, pasamos a la casilla siguiente
     if (letra !== '') evento.target.nextElementSibling?.focus()
   }
 
   function comprobar(evento) {
-    // Evita que el navegador recargue la página al enviar el formulario
     evento.preventDefault()
     if (terminada) return
-    // No se puede comprobar una fila incompleta
     if (intentos[filaActual].includes('')) return
 
     setFilaActual(filaActual + 1)
