@@ -23,6 +23,12 @@ function tableroVacio() {
   return tablero
 }
 
+function borrarHaciaAtras(evento) {
+    if (evento.key === 'Backspace' && evento.target.value === '') {
+      evento.target.previousElementSibling?.focus()
+    }
+  }
+
 function estadoDe(letra, columna, solucion) {
   if (solucion[columna] === letra) return 'correcta'
   if (solucion.includes(letra)) return 'presente'
@@ -87,6 +93,7 @@ const copia = intentos.map((fila) => [...fila])
                 estado={f < filaActual ? estadoDe(letra, c, solucion) : ''}
                 activa={f === filaActual && !terminada}
                 onCambio={(evento) => cambiarLetra(f, c, evento)}
+                onTecla={borrarHaciaAtras}
               />
             ))}
           </div>
