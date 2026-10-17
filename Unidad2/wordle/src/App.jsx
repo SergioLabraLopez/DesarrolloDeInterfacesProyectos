@@ -35,6 +35,11 @@ function App() {
     document.querySelector('.casilla:enabled')?.focus()
   }, [filaActual])
 
+  function nuevaPartida() {
+    setIntentos(tableroVacio())
+    setFilaActual(0)
+  }
+
   function cambiarLetra(f, c, evento) {
     const letra = evento.target.value.toUpperCase()
     // Solo aceptamos una letra, o nada si se ha borrado
@@ -78,11 +83,16 @@ const copia = intentos.map((fila) => [...fila])
         ))}
       </div>
       {terminada ? (
-        <p className="mensaje" role="status">
-          {ganada
-            ? '¡Enhorabuena, has acertado!'
-            : `La palabra era ${SOLUCION}`}
-        </p>
+        <>
+          <p className="mensaje" role="status">
+            {ganada
+              ? '¡Enhorabuena, has acertado!'
+              : `La palabra era ${SOLUCION}`}
+          </p>
+          <button className="boton" type="button" onClick={nuevaPartida}>
+            Nueva partida
+          </button>
+        </>
       ) : (
         <button className="boton" type="submit">
           Comprobar
