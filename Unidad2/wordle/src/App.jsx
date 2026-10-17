@@ -29,10 +29,26 @@ function borrarHaciaAtras(evento) {
     }
   }
 
-function estadoDe(letra, columna, solucion) {
-  if (solucion[columna] === letra) return 'correcta'
-  if (solucion.includes(letra)) return 'presente'
-  return 'ausente'
+function evaluarFila(fila, solucion) {
+  const estados = Array(COLUMNAS).fill('ausente')
+  const disponibles = solucion.split('')
+
+  for (let i = 0; i < COLUMNAS; i++) {
+    if (fila[i] === solucion[i]) {
+      estados[i] = 'correcta'
+      disponibles[i] = null
+    }
+  }
+
+  for (let i = 0; i < COLUMNAS; i++) {
+    if (estados[i] !== 'correcta' && disponibles.includes(fila[i])) {
+      estados[i] = 'presente'
+      const indice = disponibles.indexOf(fila[i])
+      disponibles[indice] = null
+    }
+  }
+
+  return estados
 }
 
 function App() {
@@ -84,20 +100,24 @@ const copia = intentos.map((fila) => [...fila])
     <form className="juego" onSubmit={comprobar}>
       <h1>Wordle</h1>
       <div className="tablero">
-        {intentos.map((fila, f) => (
-          <div className="fila" key={f}>
-            {fila.map((letra, c) => (
-              <Casilla
-                key={c}
-                letra={letra}
-                estado={f < filaActual ? estadoDe(letra, c, solucion) : ''}
-                activa={f === filaActual && !terminada}
-                onCambio={(evento) => cambiarLetra(f, c, evento)}
-                onTecla={borrarHaciaAtras}
-              />
-            ))}
-          </div>
-        ))}
+        {intentos.map((fila, f) => {
+          const estadosFila = f < filaActual ? evaluarFila(fila, solucion) : Array(COLUMNAS).fill('')
+          
+          return (
+            <div className="fila" key={f}>
+              {fila.map((letra, c) => (
+                <Casilla
+                  key={c}
+                  letra={letra}
+                  estado={estadosFila[c]}
+                  activa={f === filaActual && !terminada}
+                  onCambio={(evento) => cambiarLetra(f, c, evento)}
+                  onTecla={borrarHaciaAtras}
+                />
+              ))}
+            </div>
+          )
+        })}
       </div>
       {terminada ? (
         <>
