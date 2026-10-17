@@ -40,18 +40,24 @@ body {
   background: #2e7d32;
   border-color: #2e7d32;
   color: #ffffff;
+  border-style: solid;
+  border-width: 4px;
 }
 
 .casilla.presente {
   background: #f2c94c;
   border-color: #f2c94c;
   color: #1a1a1b;
+  border-style: dashed;
+  border-width: 4px;
 }
 
 .casilla.ausente {
   background: #5f6368;
   border-color: #5f6368;
   color: #ffffff;
+  border-style: dotted;
+  border-width: 4px;
 }
 
 .tablero {

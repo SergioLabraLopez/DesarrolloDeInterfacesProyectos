@@ -3,6 +3,7 @@ import Casilla from './components/Casilla.jsx'
 
 const FILAS = 6
 const COLUMNAS = 5
+// const PALABRAS = ['PERRO', 'GATOS'];
 const PALABRAS = [
   'PERRO', 'PLATO', 'RELOJ', 'GATOS', 'LIBRO', 'PLAYA', 'MONTE', 'NIEVE', 'FUEGO', 'AGUAS',
   'ARBOL', 'BARCO', 'CAMPO', 'CASAS', 'CERRO', 'CLASE', 'COCHE', 'CORTE', 'DANZA', 'DIETA',
@@ -61,6 +62,8 @@ function App() {
   const ganada = ultimo === solucion
   const terminada = ganada || filaActual === FILAS
 
+  console.log(solucion);
+
   useEffect(() => {
     document.querySelector('.casilla:enabled')?.focus()
   }, [filaActual])
@@ -107,13 +110,15 @@ const copia = intentos.map((fila) => [...fila])
             <div className="fila" key={f}>
               {fila.map((letra, c) => (
                 <Casilla
-                  key={c}
-                  letra={letra}
-                  estado={estadosFila[c]}
-                  activa={f === filaActual && !terminada}
-                  onCambio={(evento) => cambiarLetra(f, c, evento)}
-                  onTecla={borrarHaciaAtras}
-                />
+                key={c}
+                letra={letra}
+                estado={estadosFila[c]}
+                activa={f === filaActual && !terminada}
+                onCambio={(evento) => cambiarLetra(f, c, evento)}
+                onTecla={borrarHaciaAtras}
+                fila={f}
+                columna={c}
+              />
               ))}
             </div>
           )
