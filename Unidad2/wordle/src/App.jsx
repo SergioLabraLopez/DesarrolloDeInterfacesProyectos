@@ -33,6 +33,7 @@ function App() {
   const [intentos, setIntentos] = useState(tableroVacio())
   const [filaActual, setFilaActual] = useState(0)
   const [solucion, setSolucion] = useState(palabraAlAzar())
+  const [error, setError] = useState('')
 
   const ultimo = filaActual > 0 ? intentos[filaActual - 1].join('') : ''
   const ganada = ultimo === solucion
@@ -49,6 +50,7 @@ function App() {
   }
 
   function cambiarLetra(f, c, evento) {
+    setError('')
     const letra = evento.target.value.toUpperCase()
     if (!/^[A-ZÑ]?$/.test(letra)) return
 
@@ -62,8 +64,13 @@ const copia = intentos.map((fila) => [...fila])
   function comprobar(evento) {
     evento.preventDefault()
     if (terminada) return
-    if (intentos[filaActual].includes('')) return
 
+    if (intentos[filaActual].includes('')) {
+      setError('Faltan letras')
+      return
+    }
+
+    setError('')
     setFilaActual(filaActual + 1)
   }
 
@@ -100,6 +107,11 @@ const copia = intentos.map((fila) => [...fila])
         <button className="boton" type="submit">
           Comprobar
         </button>
+      )}
+      {error !== '' && (
+        <p className="mensaje" role="alert">
+          {error}
+        </p>
       )}
     </form>
   )
