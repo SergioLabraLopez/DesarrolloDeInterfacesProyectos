@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "nombre": "Teclado Mecánico",
+    "descripcion": "Teclado mecánico con retroiluminación RGB.",
+    "precio": 55.99,
+    "categoria": "Periféricos",
+    "imagen": "/teclado.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Ratón Inalámbrico",
+    "descripcion": "Ratón ergonómico con batería recargable.",
+    "precio": 25.50,
+    "categoria": "Periféricos",
+    "imagen": "/raton.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Monitor 24 pulgadas",
+    "descripcion": "Monitor Full HD con panel IPS.",
+    "precio": 140.00,
+    "categoria": "Monitores",
+    "imagen": "/monitor.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Memoria RAM 16GB",
+    "descripcion": "Módulo de memoria DDR4 a 3200MHz.",
+    "precio": 45.00,
+    "categoria": "Componentes",
+    "imagen": "/ram.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Disco SSD 1TB",
+    "descripcion": "Unidad de estado sólido NVMe ultra rápida.",
+    "precio": 89.99,
+    "categoria": "Componentes",
+    "imagen": "/ssd.jpg"
+  },
+  {
+    "id": 6,
+    "nombre": "Auriculares con micrófono",
+    "descripcion": "Auriculares cerrados ideales para videollamadas.",
+    "precio": 35.00,
+    "categoria": "Audio",
+    "imagen": "/auriculares.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Alfombrilla XXL",
+    "descripcion": "Alfombrilla de escritorio para teclado y ratón.",
+    "precio": 15.99,
+    "categoria": "Accesorios",
+    "imagen": "/alfombrilla.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Cámara Web HD",
+    "descripcion": "Webcam 1080p con enfoque automático.",
+    "precio": 49.90,
+    "categoria": "Periféricos",
+    "imagen": "/webcam.jpg"
+  }
+]
