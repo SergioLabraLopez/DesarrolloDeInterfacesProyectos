@@ -1,13 +1,331 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web-grupo-musica</title>
+    <title>Avicii - Web Oficial</title>
   </head>
   <body>
-    <div id="app"></div>
+
+    <header id="inicio">
+      <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand fw-bold" href="#inicio">AVICII</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar u ocultar navegación">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="#el-grupo">Biografía</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Discografía
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#discografia">Álbumes</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#gira">Tributo</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href="#modalContacto" data-bs-toggle="modal" data-bs-target="#modalContacto">Contacto</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="portada">
+        <div id="carruselAvicii" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselAvicii" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carruselAvicii" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carruselAvicii" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="src/img/avicii1.jpg" class="d-block w-100" alt="Avicii pinchando en directo en un festival">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="fw-bold fs-3">Leyenda del EDM</h5>
+                <p>Revive la magia de sus mejores actuaciones en directo.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="src/img/avicii2.jpg" class="d-block w-100" alt="Avicii trabajando en el estudio de grabación">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="fw-bold fs-3">True & Stories</h5>
+                <p>Los álbumes que redefinieron la música electrónica.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="src/img/avicii3.jpg" class="d-block w-100" alt="Homenaje a Tim Bergling">
+              <div class="carousel-caption d-none d-md-block">
+                <h5 class="fw-bold fs-3">Tim Bergling</h5>
+                <p>Su música y su legado vivirán para siempre.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carruselAvicii" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carruselAvicii" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="el-grupo" class="container py-5">
+        <h2 class="text-center fw-bold mb-5">El Legado de Tim Bergling</h2>
+        <div class="row align-items-center mb-5">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <img src="src/img/acicii_bio.jpg" alt="Tim Bergling trabajando en el estudio" class="img-fluid rounded shadow">
+          </div>
+          <div class="col-md-6">
+            <h3 class="fw-bold">De Estocolmo para el mundo</h3>
+            <p>Tim Bergling, mundialmente conocido como Avicii, fue un productor y DJ sueco que revolucionó la música electrónica (EDM) mezclándola con elementos acústicos, country y pop, creando melodías inolvidables.</p>
+            <a href="#discografia" class="btn btn-primary mt-2">Escuchar su música</a>
+          </div>
+        </div>
+
+        <h3 class="text-center fw-bold mb-4">Voces y Colaboradores Frecuentes</h3>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <img src="src/img/aloe.jpg" class="card-img-top" alt="Aloe Blacc">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Aloe Blacc</h5>
+                <p class="card-text text-muted mt-auto">Vocalista en "Wake Me Up"</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <img src="src/img/sandro.jpg" class="card-img-top" alt="Sandro Cavazza">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Sandro Cavazza</h5>
+                <p class="card-text text-muted mt-auto">Vocalista en "Without You"</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <img src="src/img/dan.jpg" class="card-img-top" alt="Dan Tyminski">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Dan Tyminski</h5>
+                <p class="card-text text-muted mt-auto">Vocalista en "Hey Brother"</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card h-100 shadow-sm">
+              <img src="src/img/rita.jpg" class="card-img-top" alt="Rita Ora">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Rita Ora</h5>
+                <p class="card-text text-muted mt-auto">Vocalista en "Lonely Together"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="discografia" class="container-fluid bg-light py-5">
+        <div class="container">
+          <h2 class="text-center fw-bold mb-5">Discografía</h2>
+          <div class="row g-4">
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow">
+                <img src="src/img/true.jpg" class="card-img-top" alt="Portada del álbum True">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">True</h5>
+                  <h6 class="card-subtitle mb-3 text-muted">2013</h6>
+                  <button class="btn btn-outline-dark w-100" type="button" data-bs-toggle="collapse" data-bs-target="#temasTrue" aria-expanded="false" aria-controls="temasTrue">
+                    Ver canciones
+                  </button>
+                  <div class="collapse mt-3" id="temasTrue">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">1. Wake Me Up</li>
+                      <li class="list-group-item">2. You Make Me</li>
+                      <li class="list-group-item">3. Hey Brother</li>
+                      <li class="list-group-item">4. Addicted to You</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow">
+                <img src="src/img/stories.jpg" class="card-img-top" alt="Portada del álbum Stories">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">Stories</h5>
+                  <h6 class="card-subtitle mb-3 text-muted">2015</h6>
+                  <button class="btn btn-outline-dark w-100" type="button" data-bs-toggle="collapse" data-bs-target="#temasStories" aria-expanded="false" aria-controls="temasStories">
+                    Ver canciones
+                  </button>
+                  <div class="collapse mt-3" id="temasStories">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">1. Waiting for Love</li>
+                      <li class="list-group-item">2. For a Better Day</li>
+                      <li class="list-group-item">3. Broken Arrows</li>
+                      <li class="list-group-item">4. Pure Grinding</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Disco 3 -->
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow">
+                <img src="src/img/tim.jpg" class="card-img-top" alt="Portada del álbum TIM">
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">TIM (Póstumo)</h5>
+                  <h6 class="card-subtitle mb-3 text-muted">2019</h6>
+                  <button class="btn btn-outline-dark w-100" type="button" data-bs-toggle="collapse" data-bs-target="#temasTim" aria-expanded="false" aria-controls="temasTim">
+                    Ver canciones
+                  </button>
+                  <div class="collapse mt-3" id="temasTim">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">1. SOS</li>
+                      <li class="list-group-item">2. Heaven</li>
+                      <li class="list-group-item">3. Tough Love</li>
+                      <li class="list-group-item">4. Fades Away</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gira" class="container py-5">
+        <h2 class="text-center fw-bold mb-5">Gira Tributo 2027</h2>
+        <div class="table-responsive shadow-sm">
+          <table class="table table-dark table-striped table-hover align-middle mb-0">
+            <thead>
+              <tr>
+                <th scope="col">Fecha</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Sala / Festival</th>
+                <th scope="col" class="text-end">Entradas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>15 de Mayo</td>
+                <td>Estocolmo, Suecia</td>
+                <td>Friends Arena</td>
+                <td class="text-end"><span class="badge text-bg-danger">Agotado</span></td>
+              </tr>
+              <tr>
+                <td>22 de Mayo</td>
+                <td>Ibiza, España</td>
+                <td>Ushuaïa</td>
+                <td class="text-end"><button class="btn btn-sm btn-primary">Comprar</button></td>
+              </tr>
+              <tr>
+                <td>10 de Junio</td>
+                <td>Boom, Bélgica</td>
+                <td>Tomorrowland</td>
+                <td class="text-end"><span class="badge text-bg-warning text-dark">Últimas entradas</span></td>
+              </tr>
+              <tr>
+                <td>25 de Junio</td>
+                <td>Miami, EE.UU.</td>
+                <td>Ultra Music Festival</td>
+                <td class="text-end"><button class="btn btn-sm btn-primary">Comprar</button></td>
+              </tr>
+              <tr>
+                <td>08 de Julio</td>
+                <td>Londres, Reino Unido</td>
+                <td>O2 Arena</td>
+                <td class="text-end"><span class="badge text-bg-danger">Agotado</span></td>
+              </tr>
+              <tr>
+                <td>20 de Julio</td>
+                <td>Ámsterdam, Países Bajos</td>
+                <td>Johan Cruyff Arena</td>
+                <td class="text-end"><button class="btn btn-sm btn-primary">Comprar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <nav aria-label="Paginación de la gira" class="mt-4">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link">Anterior</a></li>
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+          </ul>
+        </nav>
+      </section>
+    </main>
+
+    <div class="fixed-bottom p-3 d-block d-md-none bg-dark border-top text-center">
+      <a href="#gira" class="btn btn-primary w-100 fw-bold">🎟️ Comprar Entradas</a>
+    </div>
+
+    <div class="modal fade" id="modalContacto" tabindex="-1" aria-labelledby="modalContactoLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalContactoLabel">Contacto y Contratación</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="nombreForm" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombreForm" required>
+              </div>
+              <div class="mb-3">
+                <label for="correoForm" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correoForm" placeholder="nombre@ejemplo.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="motivoForm" class="form-label">Motivo</label>
+                <select class="form-select" id="motivoForm" required>
+                  <option value="">Selecciona un motivo...</option>
+                  <option value="prensa">Prensa</option>
+                  <option value="contratacion">Contratación</option>
+                  <option value="fans">Club de fans</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="mensajeForm" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensajeForm" rows="3" required></textarea>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="privacidadForm" required>
+                <label class="form-check-label" for="privacidadForm">
+                  Acepto la política de privacidad
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-5 mt-5">
+      <div class="container">
+        <h4 class="fw-bold mb-4">AVICII (Tim Bergling)</h4>
+        <div class="mb-4">
+          <a href="#" class="btn btn-outline-light btn-sm mx-1">Spotify</a>
+          <a href="#" class="btn btn-outline-light btn-sm mx-1">YouTube</a>
+          <a href="#" class="btn btn-outline-light btn-sm mx-1">Instagram</a>
+        </div>
+        <p class="mb-1">&copy; 2027 Tributo a Avicii. Todos los derechos reservados.</p>
+        <a href="#" class="text-white-50 text-decoration-none small">Aviso Legal</a> | 
+        <a href="#" class="text-white-50 text-decoration-none small">Política de Privacidad</a>
+      </div>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
